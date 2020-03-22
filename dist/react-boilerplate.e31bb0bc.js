@@ -55438,43 +55438,7 @@ Dialog.propTypes = {// children: PropTypes.arrayOf[Pri]
 };
 var _default = Dialog;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","prop-types":"node_modules/prop-types/index.js","@material-ui/core/Modal":"node_modules/@material-ui/core/esm/Modal/index.js","@material-ui/core/styles":"node_modules/@material-ui/core/esm/styles/index.js"}],"src/components/Modal/useDialog.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = require("react");
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-var useDialog = function useDialog() {
-  var _useState = (0, _react.useState)(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      isShowing = _useState2[0],
-      setIsShowing = _useState2[1];
-
-  var toggle = function toggle() {
-    setIsShowing(!isShowing);
-  };
-
-  return {
-    isShowing: isShowing,
-    toggle: toggle
-  };
-};
-
-var _default = useDialog;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/components/Modal/DialogHeader.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","prop-types":"node_modules/prop-types/index.js","@material-ui/core/Modal":"node_modules/@material-ui/core/esm/Modal/index.js","@material-ui/core/styles":"node_modules/@material-ui/core/esm/styles/index.js"}],"src/components/Modal/DialogHeader.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -55597,7 +55561,43 @@ var DialogFooter = function DialogFooter(_ref) {
 
 var _default = DialogFooter;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","@material-ui/core/styles":"node_modules/@material-ui/core/esm/styles/index.js"}],"src/components/Modal/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","@material-ui/core/styles":"node_modules/@material-ui/core/esm/styles/index.js"}],"src/components/Modal/useDialog.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = require("react");
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var useDialog = function useDialog() {
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isShowing = _useState2[0],
+      setIsShowing = _useState2[1];
+
+  var toggle = function toggle() {
+    setIsShowing(!isShowing);
+  };
+
+  return {
+    isShowing: isShowing,
+    toggle: toggle
+  };
+};
+
+var _default = useDialog;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/components/Modal/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -55615,28 +55615,8 @@ Object.defineProperty(exports, "useDialog", {
     return _useDialog.default;
   }
 });
-Object.defineProperty(exports, "DialogHeader", {
-  enumerable: true,
-  get: function () {
-    return _DialogHeader.default;
-  }
-});
-Object.defineProperty(exports, "DialogContent", {
-  enumerable: true,
-  get: function () {
-    return _DialogContent.default;
-  }
-});
-Object.defineProperty(exports, "DialogFooter", {
-  enumerable: true,
-  get: function () {
-    return _DialogFooter.default;
-  }
-});
 
 var _Dialog = _interopRequireDefault(require("./Dialog"));
-
-var _useDialog = _interopRequireDefault(require("./useDialog"));
 
 var _DialogHeader = _interopRequireDefault(require("./DialogHeader"));
 
@@ -55644,8 +55624,14 @@ var _DialogContent = _interopRequireDefault(require("./DialogContent"));
 
 var _DialogFooter = _interopRequireDefault(require("./DialogFooter"));
 
+var _useDialog = _interopRequireDefault(require("./useDialog"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Dialog":"src/components/Modal/Dialog.js","./useDialog":"src/components/Modal/useDialog.js","./DialogHeader":"src/components/Modal/DialogHeader.js","./DialogContent":"src/components/Modal/DialogContent.js","./DialogFooter":"src/components/Modal/DialogFooter.js"}],"src/App.js":[function(require,module,exports) {
+
+_Dialog.default.Header = _DialogHeader.default;
+_Dialog.default.Content = _DialogContent.default;
+_Dialog.default.Footer = _DialogFooter.default;
+},{"./Dialog":"src/components/Modal/Dialog.js","./DialogHeader":"src/components/Modal/DialogHeader.js","./DialogContent":"src/components/Modal/DialogContent.js","./DialogFooter":"src/components/Modal/DialogFooter.js","./useDialog":"src/components/Modal/useDialog.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -55669,6 +55655,13 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+// import {
+//   Dialog,
+//   useDialog,
+//   DialogHeader,
+//   DialogFooter,
+//   DialogContent,
+// } from './components/Modal';
 var App = function App() {
   var _useDialog = (0, _Modal.useDialog)(),
       isShowing = _useDialog.isShowing,
@@ -55681,10 +55674,10 @@ var App = function App() {
     }
   }, "Modal!"), _react.default.createElement(_Modal.Dialog, {
     isOpen: isShowing
-  }, _react.default.createElement(_Modal.DialogHeader, {
+  }, _react.default.createElement(_Modal.Dialog.Header, {
     closeButton: true,
     onClose: toggle
-  }, _react.default.createElement("h3", null, "Export this report")), _react.default.createElement(_Modal.DialogContent, null, _react.default.createElement(_ShareDoc.default, null)), _react.default.createElement(_Modal.DialogFooter, null, _react.default.createElement(_Fab.default, {
+  }, _react.default.createElement("h3", null, "Export this report")), _react.default.createElement(_Modal.Dialog.Content, null, _react.default.createElement(_ShareDoc.default, null)), _react.default.createElement(_Modal.Dialog.Footer, null, _react.default.createElement(_Fab.default, {
     style: {
       marginRight: '10px',
       width: '84px',

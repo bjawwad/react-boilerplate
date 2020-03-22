@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Fab from '@material-ui/core/Fab';
 import ShareDoc from './components/ShareDocument/ShareDoc';
-import {
-  Dialog,
-  useDialog,
-  DialogHeader,
-  DialogFooter,
-  DialogContent,
-} from './components/Modal';
+// import {
+//   Dialog,
+//   useDialog,
+//   DialogHeader,
+//   DialogFooter,
+//   DialogContent,
+// } from './components/Modal';
+import { Dialog, useDialog } from './components/Modal';
 
 const App = () => {
   const { isShowing, toggle } = useDialog();
@@ -24,15 +25,15 @@ const App = () => {
       </Button>
 
       <Dialog isOpen={isShowing}>
-        <DialogHeader closeButton onClose={toggle}>
+        <Dialog.Header closeButton onClose={toggle}>
           <h3>Export this report</h3>
-        </DialogHeader>
+        </Dialog.Header>
 
-        <DialogContent>
+        <Dialog.Content>
           <ShareDoc />
-        </DialogContent>
+        </Dialog.Content>
 
-        <DialogFooter>
+        <Dialog.Footer>
           <Fab
             style={{
               marginRight: '10px',
@@ -53,7 +54,7 @@ const App = () => {
           >
             Cancel
           </Fab>
-        </DialogFooter>
+        </Dialog.Footer>
       </Dialog>
     </div>
   );

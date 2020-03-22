@@ -1,5 +1,11 @@
-export { default as Dialog } from './Dialog';
+import Dialog from './Dialog';
+import DialogHeader from './DialogHeader';
+import DialogContent from './DialogContent';
+import DialogFooter from './DialogFooter';
+
+Dialog.Header = DialogHeader;
+Dialog.Content = DialogContent;
+Dialog.Footer = DialogFooter;
+
+export { Dialog };
 export { default as useDialog } from './useDialog';
-export { default as DialogHeader } from './DialogHeader';
-export { default as DialogContent } from './DialogContent';
-export { default as DialogFooter } from './DialogFooter';
